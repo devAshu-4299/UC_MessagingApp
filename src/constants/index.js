@@ -1,0 +1,1 @@
+export const toastMSGLifeTime = 5000
