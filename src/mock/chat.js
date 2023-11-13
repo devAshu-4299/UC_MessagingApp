@@ -10,7 +10,7 @@ const chats = {
             {
               id: 1,
               content: 'Hello Everyone, Happy Diwali!',
-              sender: 'Ashish@yopmail.com',
+              sender: 'myself@yopmail.com',
               timestamp: '2023-01-01T12:05:00Z',
             },
             {
@@ -22,7 +22,7 @@ const chats = {
             {
               id: 3,
               content: 'This Diwali is the best one, spending some quality time with family after so long',
-              sender: 'myself@yopmail.com',
+              sender: 'Ashish@yopmail.com',
               timestamp: '2023-01-01T12:05:00Z',
             },
           ],

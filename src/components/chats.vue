@@ -1,20 +1,22 @@
 <template>
   <section class="loggedin-section">
     <div class="rectangle-1">
-      <div>
+      <div class="alignElements">
         <img class="img-span" src="./../assets/images/Group7.svg" alt="" />
         <InputText
           :class="errors && errors[0] ? 'error_msgs' : ''"
           v-bind="field"
           field="searchChats"
+          placeholder="Search"
           v-model="searchChats"
-        />
+        >
+        </InputText>
         <img class="img-search" src="./../assets/images/search.svg" alt="" />
-        <span class="user-txt"> {{ getUserName[0]?.toUpperCase() }} </span>
       </div>
+      <span class="user-txt"> {{ getUserName[0]?.toUpperCase() }} </span>
     </div>
 
-    <div>
+    <span style="display: inline-flex">
       <div class="rectangle-4">
         <div class="frame-8">
           <span class="chats">Chats</span>
@@ -30,6 +32,7 @@
         </div>
         <div
           class="chat-layout"
+          :class="item.id == messages.id ?'bg-color-gray':''"
           v-for="item in displayChats"
           :key="item.id"
           @click="openChat(item)"
@@ -59,8 +62,6 @@
             alt=""
           />
         </div>
-      </div>
-    </div>
     <IndividualChat :messages="messages" />
     <Form @submit="sendChatMessage" ref="sendSMS">
       <div>
@@ -76,6 +77,8 @@
         </button>
       </div>
     </Form>
+      </div>
+    </span>
   </section>
   <Dialog
     v-model:visible="visible"
