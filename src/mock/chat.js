@@ -1,12 +1,11 @@
 const chats = {
     status: 200,
     data: {
-      chats:[
+      chats: [
         {
           id: 1,
           name: 'Friends Forever',
-          icon: 'FF',
-          createdAt: '2023-01-01T12:00:00Z',
+          createdAt: '2023-01-03T12:20:00Z',
           messages: [
             {
               id: 1,
@@ -22,7 +21,7 @@ const chats = {
             },
             {
               id: 3,
-              content: 'This Diwali is best one, spending some quality time with family after so long',
+              content: 'This Diwali is the best one, spending some quality time with family after so long',
               sender: 'myself@yopmail.com',
               timestamp: '2023-01-01T12:05:00Z',
             },
@@ -31,7 +30,6 @@ const chats = {
         {
           id: 2,
           name: 'Sports',
-          icon: 'S',
           createdAt: '2023-01-01T12:00:00Z',
           messages: [
             {
@@ -51,6 +49,19 @@ const chats = {
               content: 'Okay Sir.',
               sender: 'myself@yopmail.com',
               timestamp: '2023-01-01T12:05:00Z',
+            },
+          ],
+        },
+        {
+          id: 3,
+          name: 'Deployment XT',
+          createdAt: '2023-01-02T08:30:00Z',
+          messages: [
+            {
+              id: 1,
+              content: 'Hey everyone! Excited to join this chat.',
+              sender: 'newuser1@yopmail.com',
+              timestamp: '2023-01-02T08:35:00Z',
             },
           ],
         },

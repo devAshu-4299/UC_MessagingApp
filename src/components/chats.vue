@@ -10,7 +10,7 @@
           v-model="searchChats"
         />
         <img class="img-search" src="./../assets/images/search.svg" alt="" />
-        <span class="user-txt">U</span>
+        <span class="user-txt"> {{ getUserName[0]?.toUpperCase() }} </span>
       </div>
     </div>
 
@@ -62,17 +62,20 @@
       </div>
     </div>
     <IndividualChat :messages="messages" />
-    <div>
-      <img class="img-info" src="./../assets/images/attach_file.svg" alt="" />
+    <Form @submit="sendChatMessage" ref="sendSMS">
+      <div>
+        <img class="img-info" src="./../assets/images/attach_file.svg" alt="" />
 
-      <InputText field="addNewMessage" v-model="addNewMessage" />
-      <img
-        class="img-add"
-        @click="sendChatMessage"
-        src="./../assets/images/send.svg"
-        alt=""
-      />
-    </div>
+        <InputText field="addNewMessage" v-model="addNewMessage" />
+        <button type="submit" class="img-add">
+          <img
+            @click="sendChatMessage"
+            src="./../assets/images/send.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </Form>
   </section>
   <Dialog
     v-model:visible="visible"
@@ -150,6 +153,7 @@ export default {
         },
       };
       await this.AddMessagesInStore(payload);
+      this.displayChats = this.getChats;
       this.addNewMessage = "";
     },
     async AddDialogChat() {

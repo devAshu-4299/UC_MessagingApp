@@ -10,7 +10,17 @@ export default {
   },
   getters: {
     getUserName: (state) => state.username,
-    getChats: (state) => state.chats,
+    getChats: (state) => {
+      const sortedChats = [...state.chats];
+  
+      sortedChats.sort((a, b) => {
+        const dateA = new Date(a.createdAt).getTime();
+        const dateB = new Date(b.createdAt).getTime();
+        return dateB - dateA;
+      });
+  
+      return sortedChats;
+    },
   },
   mutations: {
     SET_USERNAME(state, resp) {
