@@ -32,7 +32,7 @@
         </div>
         <div
           class="chat-layout"
-          :class="item.id == messages.id ?'bg-color-gray':''"
+          :class="item.id == messages?.id ?'bg-color-gray':''"
           v-for="item in displayChats"
           :key="item.id"
           @click="openChat(item)"
@@ -54,7 +54,7 @@
       </div>
       <div class="frame-18">
         <div class="text">
-          {{ messages.name }}
+          {{ messages?.name }}
 
           <img
             class="img-info"
@@ -174,6 +174,7 @@ export default {
         messages: [],
       };
       await this.AddChatInStore(payload);
+      this.displayChats = this.getChats;
       this.contentValue = "";
       this.visible = false;
     },
