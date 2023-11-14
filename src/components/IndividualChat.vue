@@ -1,7 +1,8 @@
 <template>
+<div class="chat-sms-app-alt">
   <div class="chat-sms-app" v-for="item in messages.messages" :key="item.id">
-    <div class="chat-box">
-      <div v-if="item.sender != getUserName">
+    <div class="chat-box" v-if="item.sender != getUserName">
+      <div class="chat-box-align" >
         <span class="avatar">{{ item.sender[0].toUpperCase() }}</span>
 
         <span class="message-display">
@@ -9,7 +10,9 @@
           <span class="message-time">{{ formatDate(item.timestamp) }}</span>
         </span>
       </div>
-      <div v-else>
+      </div>
+      <div class="chat-box chat-box-right" v-else>
+      <div class="chat-box-align-right" >
         <span class="message-display">
           <span class="message-content">{{ item.content }}</span>
           <span class="message-time">{{ formatDate(item.timestamp) }}</span>
@@ -18,6 +21,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>

@@ -16,7 +16,7 @@
       <span class="user-txt"> {{ getUserName[0]?.toUpperCase() }} </span>
     </div>
 
-    <span style="display: inline-flex">
+    <span style="display: flex">
       <div class="rectangle-4">
         <div class="frame-8">
           <span class="chats">Chats</span>
@@ -63,20 +63,22 @@
           />
         </div>
     <IndividualChat :messages="messages" />
-    <Form @submit="sendChatMessage" ref="sendSMS">
-      <div>
-        <img class="img-info" src="./../assets/images/attach_file.svg" alt="" />
+      <div class="chat-text-field">
+        <Form @submit="sendChatMessage" ref="sendSMS">
+          <div class="chat-input-field">
+            <img class="img-info" src="./../assets/images/attach_file.svg" alt="" />
 
-        <InputText field="addNewMessage" v-model="addNewMessage" />
-        <button type="submit" class="img-add">
-          <img
-            @click="sendChatMessage"
-            src="./../assets/images/send.svg"
-            alt=""
-          />
-        </button>
+            <InputText field="addNewMessage" v-model="addNewMessage" />
+            <button type="submit" class="img-add">
+              <img
+                @click="sendChatMessage"
+                src="./../assets/images/send.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </Form>
       </div>
-    </Form>
       </div>
     </span>
   </section>
@@ -87,12 +89,14 @@
     :header="headerValue"
     :style="{ width: '50vw' }"
   >
-    <p>
+  <span class="close-icon">X</span>
+      <p>
       Chats are where your circle communicates. They are best when organised
-      around a topic - #Writing, for example<br />
-      Name<br />
+      around a topic - #Writing, for example</p>
+      <p class="name-label"><strong>Name</strong></p>
+
       <InputText field="contentValue" v-model="contentValue" />
-    </p>
+   
     <template #footer>
       <Button
         label="Create"
